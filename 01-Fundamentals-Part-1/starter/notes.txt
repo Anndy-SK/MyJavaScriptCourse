@@ -26,3 +26,5 @@
     2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
 
 -> Lecture: Operator Precedence
+
+-> CHALLENGE #1
