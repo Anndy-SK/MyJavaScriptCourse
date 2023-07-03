@@ -30,3 +30,11 @@
 -> CHALLENGE #1
 
 -> Lecture: Strings and Template Literals
+    strings     ->>     "I'm" + year + ' old.'
+    literals    ->>     `I'm ${year} old.`
+
+-> Lecture: Taking Decisions: if / else Statements
+
+-> CHALLENGE #2
+
+-> Lecture: Type Conversion and Coercion
