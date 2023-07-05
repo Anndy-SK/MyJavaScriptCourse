@@ -38,3 +38,8 @@
 -> CHALLENGE #2
 
 -> Lecture: Type Conversion and Coercion
+
+-> Lecture: Truthy and Falsy Values
+    5 falsy values: 0, '', undefined, null, NaN
+
+-> Lecture: Equality operators: == VS. ===
