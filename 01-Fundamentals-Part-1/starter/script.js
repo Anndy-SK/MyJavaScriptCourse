@@ -12,6 +12,7 @@ console.log(firstName);
 // let PI = 3;
 */
 
+
 // 2.7.2023
 /* Lecture: Data Types:
 let javascriptIsFun = true;
@@ -36,6 +37,7 @@ console.log(typeof year);
 console.log(typeof null);
 */
 
+
 /* Lecture: LET, CONST and VAR
 let age = 30;
 age = 31;
@@ -52,6 +54,7 @@ console.log(typeof job);
 lastName = 'Schmedtmann';
 console.log(lastName);
 */
+
 
 /* Lecture: Basic Operators
 // Math operators
@@ -84,6 +87,7 @@ const isFullAge = ageSarah >= 18;
 console.log(now - 1991 > now - 2018);
 */
 
+
 /* Lecture: Operator Precedence
 const now = 2037;
 const ageJonas = now - 1991;
@@ -99,7 +103,7 @@ const averageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, averageAge);
 */
 
-// 3.7.2023
+
 /* Lecture: Strings and Template Literals
 const firstName = 'Jonas';
 const job = 'teacher';
@@ -122,6 +126,7 @@ console.log(`String
 multiple
 lines`);
 */
+
 
 /* Lecture: Taking Decisions: if / else Statements
 const age = 15;
@@ -146,6 +151,7 @@ if (birthYear <= 2000) {
 console.log(century);
 */
 
+
 /* Lecture: Type Conversion and Coercion
 // type conversion
 const inputYear = '1991';
@@ -166,6 +172,7 @@ let n = '1' + 1;    // 11
 n = n - 1;          // 11 - 1 = 10
 console.log(n);
 */
+
 
 /* Lecture: Truthy and Falsy Values
 // 5 falsy values: 0, '', undefined, null, NaN
@@ -192,4 +199,48 @@ if (height) {
 */
 
 
-// Lecture: Equality operators: == VS. ===
+// 6.7.2023
+/* Lecture: Equality operators: == VS. ===
+const age = '18';
+if (age === 18) console.log('You just became an adult :D (strict)');
+if (age == 18) console.log('You just became an adult :D (loose)');
+
+// const favourite = prompt("What's your favourite number?");
+const favourite = Number(prompt("What's your favourite number?"));
+console.log(favourite);
+console.log(typeof favourite);
+
+// if (favourite == 23)    // '23' == 23
+//     console.log('Cool! 23 is an amazing number!');
+
+if (favourite === 23) console.log('Cool! 23 is an amazing number!');  // '23' === 23
+else if (favourite === 7) console.log('7 is also a cool number');
+else if (favourite === 9) console.log('9 is also a cool number');
+else console.log('Number is not 23 or 7');
+
+if (favourite !== 23) console.log('Why not 23?');
+*/
+
+
+/* Lecture: Logical Operators
+const hasDriversLicense = true; // A
+const hasGoodVision = true;     // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+if (shouldDrive) console.log('Sarah is able to drive!');
+else console.log('Someone else should drive...');
+
+const isTired = true;   // C
+console.log(hasDriversLicense || hasGoodVision || isTired);
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired)
+    console.log('Sarah is able to drive!');
+else console.log('Someone else should drive...');
+*/
+

@@ -47,13 +47,12 @@ const BMIJohn = massJohn / (heightJohn * heightJohn);
 const markHigherBMI = BMIMark > BMIJohn;
 console.log(BMIMark, BMIJohn, markHigherBMI);
 
+
 // 3.7.2023
 /*
     CHALLENGE #2
 Use the BMI example from Challenge #1, and the code you already wrote, and improve it:
-
 1. Print a nice output to the console, telling the user who has the higher BMI. The message can be either:
-
 "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!".
 
 2. Modify the outputs above to use template literals to include the BMI values in the outputs.
@@ -69,3 +68,27 @@ if (BMIMark > BMIJohn) {
     console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`);
 }
 
+
+// 6.7.2023
+/*
+    CHALLENGE #3
+There are two gymnastics teams: Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins a trophy!
+
+Your tasks:
+1. Calculate the average score for each team, using the test data included below. The average score for Dolphins should be assigned to the scoreDolphins variable, and the average score of Koalas should be assigned to the scoreKoalas variable.
+
+2. Compare the team's average scores to determine the winner of the competition, and print to the console:
+
+"Dolphins win the trophy" if Dolphins win, or 
+"Koalas win the trophy" if Koalas win, or 
+"Both win the trophy" if their average scores are equal.
+
+TEST DATA: Dolphins scored 96, 108, and 89. Koalas scored 88, 91, and 110.
+*/
+
+const scoreDolphins = (96 + 108 + 89) / 3;
+const scoreKoalas = (88 + 91 + 110) / 3;
+
+if (scoreDolphins > scoreKoalas) console.log("Dolphins win the trophy");
+else if (scoreKoalas > scoreDolphins) console.log("Koalas win the trophy");
+else if (scoreDolphins === scoreKoalas) console.log("Koalas win the trophy");

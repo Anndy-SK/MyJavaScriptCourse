@@ -27,7 +27,7 @@
 
 -> Lecture: Operator Precedence
 
--> CHALLENGE #1
+-> CHALLENGE #1     // 2.7.2023
 
 -> Lecture: Strings and Template Literals
     strings     ->>     "I'm" + year + ' old.'
@@ -35,11 +35,20 @@
 
 -> Lecture: Taking Decisions: if / else Statements
 
--> CHALLENGE #2
+-> CHALLENGE #2     // 3.7.2023
 
 -> Lecture: Type Conversion and Coercion
 
 -> Lecture: Truthy and Falsy Values
     5 falsy values: 0, '', undefined, null, NaN
 
+// 6.7.2023
 -> Lecture: Equality operators: == VS. ===
+
+-> Lecture: Boolean Logic
+
+-> Lecture: Logical Operators
+
+-> CHALLENGE #3     // 6.7.2023
+
+-> Lecture: The switch Statement
