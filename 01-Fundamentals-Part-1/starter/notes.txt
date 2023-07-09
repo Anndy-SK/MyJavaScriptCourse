@@ -52,3 +52,10 @@
 -> CHALLENGE #3     // 6.7.2023
 
 -> Lecture: The switch Statement
+
+-> Lecture: Statements and expressions
+
+-> Lecture: The Conditional (ternary) Operator
+
+-> CHALLENGE #4     // 7.7.2023
+
