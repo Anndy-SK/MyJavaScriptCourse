@@ -1,0 +1,12 @@
+13.07.2023
+-> Lecture: Activating Strict Mode
+
+-> Lecture: Functions
+
+-> Lecture: Function Declarations vs. Expressions
+    .. process called hoisting... (before declaration)
+        const age1 = calcAge1(1991);
+        function calcAge1(birthYear){
+            return 2037 - birthYear;
+        }
+
