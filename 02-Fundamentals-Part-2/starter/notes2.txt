@@ -10,3 +10,9 @@
             return 2037 - birthYear;
         }
 
+-> Lecture: Arrow Functions
+
+-> Lecture: Functions calling other functions
+
+-> Lecture: Reviewing functions
+
