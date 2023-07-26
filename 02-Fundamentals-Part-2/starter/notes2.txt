@@ -16,3 +16,12 @@
 
 -> Lecture: Reviewing functions
 
+-> CHALLENGE #1     // 22.7.2023
+
+-> Lecture: Introduction to Arrays
+
+-> Lecture: Basic Array Operations (Methods)
+
+-> CHALLENGE #2     // 27.7.2023
+
+-> 
