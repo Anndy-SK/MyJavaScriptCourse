@@ -32,7 +32,7 @@ const checkWinner = (avgDolphins, avgKoalas) => {
 console.log(checkWinner(scoreDolphins, scoreKoalas));
 */
 
-/* Solution:
+// Solution:
 const calcAverage = (firstScore, secondscore, thirdScore) => (firstScore + secondscore + thirdScore) / 3;
 
 let scoreDolphins = calcAverage(44, 23, 71);
@@ -54,7 +54,7 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 
 checkWinner(scoreDolphins, scoreKoalas);
 // console.log(checkWinner(scoreDolphins, scoreKoalas));
-*/
+//
 
 
 // 26.7.2023
@@ -72,3 +72,25 @@ TEST DATA: 125, 555, and 44.
 */
 
 // My Solution:
+const calcTip = inputTip => (inputTip > 50 && inputTip < 300) ? inputTip * 0.15 : inputTip * 0.2;
+
+console.log(calcTip(125));
+
+const bills = [125, 555, 44];
+const tips = [];
+tips.push(calcTip(bills[0]));
+tips.push(calcTip(bills[1]));
+tips.push(calcTip(bills[2]));
+
+console.log(tips);
+//
+
+// Solution:
+
+// const calcTip = function (bill) {
+//     return (inputTip > 50 && inputTip < 300) ? inputTip * 0.15 : inputTip * 0.2;
+// }
+
+// const bills = [125, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// console.log(bills, tips);
