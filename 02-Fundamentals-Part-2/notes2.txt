@@ -22,6 +22,6 @@
 
 -> Lecture: Basic Array Operations (Methods)
 
--> CHALLENGE #2     // 27.7.2023
+-> CHALLENGE #2     // 8.8.2023
 
--> 
+-> video!

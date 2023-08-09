@@ -1,0 +1,2 @@
+- Setting up Prettier and VS Code
+    - https://prettier.io/docs/en/options
