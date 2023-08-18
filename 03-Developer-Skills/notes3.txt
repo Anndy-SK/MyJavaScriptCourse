@@ -1,2 +1,14 @@
 - Setting up Prettier and VS Code
     - https://prettier.io/docs/en/options
+
+- installing Node.js and Setting Up a Dev Environment
+
+- Learning How to Code
+
+- Using Google, StackOverflow and MDN
+
+- Debugging (Fixing Errors)
+
+- Debugging with the Console and Breakpoints
+
+- Coding Challenge #1
