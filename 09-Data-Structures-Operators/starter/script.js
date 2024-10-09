@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 // Data needed for a later exercise
 const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
 const openingHours = {
   [weekdays[3]]: {
@@ -23,11 +23,11 @@ const openingHours = {
 
 // Data needed for first part of the section
 const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
 
   // ES6 enhanced object literals
   openingHours,
@@ -52,7 +52,7 @@ const restaurant = {
   },
 
   // orderDelivery: function ({
-  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = "20:00", address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
     );
@@ -72,6 +72,37 @@ const restaurant = {
   },
 };
 
+const ordersSet = new Set([
+  "Pasta",
+  "Pizza",
+  "Pizza",
+  "Risotto",
+  "Pasta",
+  "Pizza",
+]);
+console.log(ordersSet);
+
+console.log(new Set("Jooonas"));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has("Pizza"));
+console.log(ordersSet.has("Bread"));
+ordersSet.add("Garlic Bread");
+ordersSet.add("Garlic Bread");
+ordersSet.delete("Risotto");
+console.log(ordersSet);
+// console.log(ordersSet[2]); // nefunguje takto lebo v mnozinach neexistuju indexy
+// ordersSet.clear(); // odstrani vsetky prvky v mnozine
+// console.log(ordersSet);
+
+// mnoziny su iterovatelne / daju sa pouzit v cykle
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+// const staffUnique = new Set(staff);
+const staffUnique = [...new Set(staff)]; // spread operator / nove pole
+console.log(staffUnique);
 /*
 ////////////////////////////////////////////////////////
 // Property NAMES
