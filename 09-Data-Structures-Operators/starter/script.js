@@ -72,6 +72,32 @@ const restaurant = {
   },
 };
 
+////////////////////////////////////////////////////////
+// String Methods Practice
+// const flights:
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+// console.log(flights.split('+'));
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  // console.log(flight.split(';'));
+  const [type, from, to, time] = flight.split(';');
+  // console.log(type);
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
+    '_',
+    ' '
+  )} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(
+    36,
+    ' '
+  );
+  console.log(output);
+}
+/*
+////////////////////////////////////////////////////////
 // Split and join
 console.log('a+very+nice+string'.split('+'));
 console.log('Jonas Schmedtmann'.split(' '));
@@ -123,6 +149,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
+*/
 
 /*
 ///////////////////////////////////////////////
