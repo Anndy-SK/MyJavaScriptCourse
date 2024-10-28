@@ -176,7 +176,7 @@ movements.forEach(function (mov, i, arr) {
 // 1: function(450)
 // 2: function(400)
 // ...
-*/
+
 
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -195,3 +195,4 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value}: ${value}`);
 });
+*/
