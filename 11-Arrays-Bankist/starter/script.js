@@ -83,6 +83,43 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+/////////////////////////////////////////////////
+/* // prva moznost
+const user = 'Steven Thomas Wiliams'; // stw
+const username = user
+  .toLowerCase()
+  .split(' ')
+  // .map(function (name) {
+  //   return name[0];
+  // })
+  .map(name => name[0]) // callback function
+  .join('');
+console.log(username);
+*/
+/* // druha moznost
+const createUsernames = function (user) {
+  const username = user
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0]) // callback function
+    .join('');
+  return username;
+};
+console.log(createUsernames('Steven Thomas Wiliams'));
+*/
+// tretia moznost
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0]) // callback function
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+// console.log(accounts);
 // console.log(containerMovements.innerHTML);
 
 /////////////////////////////////////////////////
@@ -195,7 +232,7 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value}: ${value}`);
 });
-*/
+
 ////////////////////////////////////////////
 
 const eurToUsd = 1.1;
@@ -212,8 +249,8 @@ console.log(movementsUSD);
 
 const movementsUSDfor = [];
 for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
-console.log(movementsUSDfor);
 
+console.log(movementsUSDfor);
 const movementsDescriptions = movements.map(
   (mov, i) =>
     `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
@@ -221,3 +258,30 @@ const movementsDescriptions = movements.map(
     )}`
 );
 console.log(movementsDescriptions);
+
+
+/////////////////////////////////////
+
+// const deposits = movements.filter(function (mov) {
+const deposits = movements.filter(function (mov, i, arr) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+*/
+console.log(movements);
+
+// REDUCE METHODE
+// accumulator -> SNOWBALL "effect"
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  console.log(`Iteration ${i}: ${acc}`);
+  return acc + cur;
+}, 0);
+console.log(balance);
