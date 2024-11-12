@@ -592,16 +592,15 @@ labelBalance.addEventListener('click', function () {
   const movementsUI2 = [...document.querySelectorAll('.movements__value')];
   // console.log(movementsUI2);
 });
-*/
 ///////////////////////////////////////////////
 // Array Methods Practice
 
 // 1. excercise
 // const bankDepositSum = accounts.map((acc) => acc.movements).flat();
 const bankDepositSum = accounts
-  .flatMap((acc) => acc.movements)
-  .filter((mov) => mov > 0)
-  .reduce((sum, cur) => sum + cur, 0);
+.flatMap((acc) => acc.movements)
+.filter((mov) => mov > 0)
+.reduce((sum, cur) => sum + cur, 0);
 console.log(bankDepositSum);
 
 // 2. excercise
@@ -611,9 +610,9 @@ console.log(bankDepositSum);
 // console.log(numDeposits1000);
 
 const numDeposits1000 = accounts
-  .flatMap((acc) => acc.movements)
-  // .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
-  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+.flatMap((acc) => acc.movements)
+// .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+.reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
 
 console.log(
   accounts.flatMap((acc) => acc.movements).filter((mov) => mov >= 1000)
@@ -630,31 +629,31 @@ console.log(a);
 // 3. excercise
 // const sums = accounts
 const { deposits, withdrawals } = accounts
-  .flatMap((acc) => acc.movements)
-  .reduce(
-    (sums, cur) => {
-      //  cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
-      sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
-      return sums;
-    },
-    { deposits: 0, withdrawals: 0 }
+.flatMap((acc) => acc.movements)
+.reduce(
+  (sums, cur) => {
+    //  cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+    sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+    return sums;
+  },
+  { deposits: 0, withdrawals: 0 }
   );
-
-console.log(deposits, withdrawals);
-
-// 4. excercise
+  
+  console.log(deposits, withdrawals);
+  
+  // 4. excercise
 // this is a nice title -> This Is a Nice Title
 const convertTitleCase = function (title) {
   const capitzalize = (str) => str[0].toUpperCase() + str.slice(1);
-
+  
   const exceptions = ['a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
-
+  
   const titleCase = title
-    .toLowerCase()
-    .split(' ')
-    // .map((word) => word[0].toUpperCase() + word.slice(1));
-    .map((word) => (exceptions.includes(word) ? word : capitzalize(word))) // exceptions.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
-    .join(' ');
+  .toLowerCase()
+  .split(' ')
+  // .map((word) => word[0].toUpperCase() + word.slice(1));
+  .map((word) => (exceptions.includes(word) ? word : capitzalize(word))) // exceptions.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
+  .join(' ');
   // return titleCase;
   return capitzalize(titleCase);
 };
@@ -662,3 +661,4 @@ const convertTitleCase = function (title) {
 console.log(convertTitleCase('this is a nice title'));
 console.log(convertTitleCase('this is a LONG title but not too long'));
 console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+*/
