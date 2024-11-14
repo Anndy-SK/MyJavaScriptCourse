@@ -143,5 +143,18 @@ btnScrollTo.addEventListener('click', function (e) {
   );
 
   // Scrolling
-  window.scrollTo(s1coords.left, s1coords.top);
+  // window.scrollTo(s1coords.left, s1coords.top);
+  // window.scrollTo(
+  //   s1coords.left + window.scrollX, // pageXOffset
+  //   s1coords.top + window.scrollY // pageYOffset
+  // );
+
+  // "old school method"
+  // window.scrollTo({
+  //   left: s1coords.left + window.scrollX,
+  //   top: s1coords.top + window.scrollY,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
 });
