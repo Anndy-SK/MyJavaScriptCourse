@@ -1,12 +1,14 @@
 'use strict';
-
-///////////////////////////////////////
-// Modal window
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+///////////////////////////////////////
+// Modal window
 
 const openModal = function (e) {
   e.preventDefault();
@@ -32,6 +34,53 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+////////////////////////////////// Lesson 193.
+// Button scrolling
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scroll (X/Y)', window.scrollX, scrollY); // pageXOffset, pageYOffset
+
+  console.log(
+    'height/width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  // Scrolling
+  // window.scrollTo(s1coords.left, s1coords.top);
+  // window.scrollTo(
+  //   s1coords.left + window.scrollX, // pageXOffset
+  //   s1coords.top + window.scrollY // pageYOffset
+  // );
+
+  // "old school method"
+  // window.scrollTo({
+  //   left: s1coords.left + window.scrollX,
+  //   top: s1coords.top + window.scrollY,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+///////////////////////////////////////////////
+// Page navigation
+
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     // console.log('LINK');
+//     const id = this.getAttribute('href');
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+// 1. Add event listener to commonparent elemen...
 
 //////////////////////////////////////////////////
 ////////////////////////////////// Lesson 188.
@@ -124,7 +173,7 @@ logo.classList.contains('c'); // not includes
 logo.className = 'Jonas';
 */
 ////////////////////////////////// Lesson 189.
-
+/*
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
@@ -158,7 +207,7 @@ btnScrollTo.addEventListener('click', function (e) {
 
   section1.scrollIntoView({ behavior: 'smooth' });
 });
-
+*/
 ////////////////////////////////// Lesson 190.
 /*
 const h1 = document.querySelector('h1');
@@ -182,7 +231,7 @@ h1.addEventListener('mouseenter', alertH1);
 setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 */
 ////////////////////////////////// Lesson 192.
-
+/*
 // rgb(255,255,255)
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
@@ -214,3 +263,4 @@ document.querySelector('.nav').addEventListener(
     console.log('NAV', e.target, e.currentTarget);
   } //, true
 );
+*/
