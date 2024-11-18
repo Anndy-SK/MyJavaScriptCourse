@@ -79,6 +79,7 @@ btnScrollTo.addEventListener('click', function (e) {
 //     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
 //   });
 // });
+
 ////////////////////////////////// Lesson 193.
 // 1. Add event listener to commonparent element
 // 2. Determine what element originated the event
