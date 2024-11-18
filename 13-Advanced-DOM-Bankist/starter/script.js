@@ -79,8 +79,22 @@ btnScrollTo.addEventListener('click', function (e) {
 //     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
 //   });
 // });
+////////////////////////////////// Lesson 193.
+// 1. Add event listener to commonparent element
+// 2. Determine what element originated the event
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  // console.log(e.target);
+  e.preventDefault();
 
-// 1. Add event listener to commonparent elemen...
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    // console.log('LINK');
+    //     // console.log('LINK');
+    const id = e.target.getAttribute('href');
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
 
 //////////////////////////////////////////////////
 ////////////////////////////////// Lesson 188.
