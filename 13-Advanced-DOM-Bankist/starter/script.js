@@ -189,16 +189,35 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 ////////////////////////////////// Lesson 197.
 // Sticky navigation
-const initialCoords = section1.getBoundingClientRect();
-console.log(initialCoords);
+// const initialCoords = section1.getBoundingClientRect();
+// console.log(initialCoords);
 
-window.addEventListener('scroll', function (e) {
-  // console.log(e);
-  console.log(window.scrollY);
+// window.addEventListener('scroll', function (e) {
+//   // console.log(e);
+//   console.log(window.scrollY);
 
-  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
-  else nav.classList.remove('sticky');
-});
+//   if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// });
+
+////////////////////////////////// Lesson 198.
+// Sticky navigation: Intersection Observer API
+
+const obsCallback = function (entries, observer) {
+  entries.forEach(entry => {
+    console.log(entry);
+  });
+};
+
+const obsOptions = {
+  root: null,
+  // threshold: 0.1,
+  // threshold: [0, 0.2],
+  threshold: [0, 1, 0.2],
+};
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(section1);
 
 //////////////////////////////////////////////////
 ////////////////////////////////// Lesson 188.
