@@ -132,6 +132,7 @@ tabsContainer.addEventListener('click', function (e) {
     .classList.add('operations__content--active');
 });
 
+////////////////////////////////// Lesson 196.
 // Menu fade animation
 // const handleHover = function (e, opacity) {
 const handleHover = function (e) {
@@ -150,17 +151,7 @@ const handleHover = function (e) {
   }
 };
 
-// nav.addEventListener('mouseover', function (e) {
-//   handleHover(e, 0.5);
-// });
-// nav.addEventListener('mouseout', function (e) {
-//   handleHover(e, 1);
-// });
-// Passing "argument" into handler
-nav.addEventListener('mouseover', handleHover.bind(0.5));
-nav.addEventListener('mouseout', handleHover.bind(1));
-
-/* // refactored
+/* /////////////// refactored
 nav.addEventListener('mouseover', function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
@@ -184,7 +175,30 @@ nav.addEventListener('mouseout', function (e) {
     logo.style.opacity = 1;
   }
 });
-*/
+//////////////////////////////*/
+
+// nav.addEventListener('mouseover', function (e) {
+//   handleHover(e, 0.5);
+// });
+// nav.addEventListener('mouseout', function (e) {
+//   handleHover(e, 1);
+// });
+// Passing "argument" into handler
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
+
+////////////////////////////////// Lesson 197.
+// Sticky navigation
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
+
+window.addEventListener('scroll', function (e) {
+  // console.log(e);
+  console.log(window.scrollY);
+
+  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+});
 
 //////////////////////////////////////////////////
 ////////////////////////////////// Lesson 188.
