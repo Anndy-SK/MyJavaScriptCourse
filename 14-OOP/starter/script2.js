@@ -2,7 +2,7 @@
 
 //////////////////////// Exercise 2 ///////////////////////////
 // Inheritance Between "Classes": Constructor Function
-/*
+
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
@@ -43,4 +43,3 @@ console.log(mike instanceof Object);
 
 Student.prototype.constructor = Student;
 console.log(Student.prototype.constructor);
-*/
