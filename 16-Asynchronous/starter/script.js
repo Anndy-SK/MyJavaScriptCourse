@@ -38,5 +38,5 @@ const getCountryData = function (country) {
 };
 
 getCountryData('portugal');
-getCountryData('slovakia');
+// getCountryData('slovakia');
 getCountryData('usa');
