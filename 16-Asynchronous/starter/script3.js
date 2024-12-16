@@ -19,21 +19,18 @@ const renderCountry = function (data, className = '') {
     </article>
   `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
+  // countriesContainer.style.opacity = 1;
 };
 
 const renderError = function (msg) {
   countriesContainer.insertAdjacentText('beforeend', msg);
-  countriesContainer.style.opacity = 1;
+  // countriesContainer.style.opacity = 1;
 };
 
 const getCountryData = function (country) {
   // Country 1
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(
-      response => response.json()
-      // response => response.json(), err => alert(err)
-    )
+    .then(response => response.json()) // response => response.json(), err => alert(err)
     .then(data => {
       // console.log(data);
       renderCountry(data[0]);
@@ -45,14 +42,19 @@ const getCountryData = function (country) {
       // Country 2
       return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
     })
-    .then(response => response.json())
-    // response => response.json(), err => alert(err)
+    .then(response => response.json()) // response => response.json(), err => alert(err)
     .then(data => renderCountry(data, 'neighbour'))
-    // .catch(err => alert(err));
-    .catch(err => console.err(`${err} 💥💥💥`));
-  renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
+    .catch(err => {
+      console.error(`${err} 💥💥💥`);
+      renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
+    }) // .catch(err => alert(err));
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
 };
 
 btn.addEventListener('click', function () {
   getCountryData('portugal');
 });
+
+// getCountryData('adasdasa');
