@@ -1,9 +1,7 @@
 'use strict';
 
-// const btn = document.querySelector('.btn-country');
+const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
-
-///////////////////////////////////////
 
 const renderCountry = function (data, className = '') {
   const html = `
@@ -24,10 +22,18 @@ const renderCountry = function (data, className = '') {
   countriesContainer.style.opacity = 1;
 };
 
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  countriesContainer.style.opacity = 1;
+};
+
 const getCountryData = function (country) {
   // Country 1
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(response => response.json())
+    .then(
+      response => response.json()
+      // response => response.json(), err => alert(err)
+    )
     .then(data => {
       // console.log(data);
       renderCountry(data[0]);
@@ -38,11 +44,15 @@ const getCountryData = function (country) {
 
       // Country 2
       return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
-      // return 23;
     })
-    // .then(data => alert(data));
     .then(response => response.json())
-    .then(data => renderCountry(data, 'neighbour'));
+    // response => response.json(), err => alert(err)
+    .then(data => renderCountry(data, 'neighbour'))
+    // .catch(err => alert(err));
+    .catch(err => console.err(`${err} 💥💥💥`));
+  renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
 };
 
-getCountryData('portugal');
+btn.addEventListener('click', function () {
+  getCountryData('portugal');
+});
